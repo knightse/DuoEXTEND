@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Keep popup code and assets inside the extension package. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'">
     <link rel="stylesheet" href="popup.css">
     <script type="module" src="popup.js"></script>
+    <title>DuoEXTEND</title>
 </head>
 <body>
-    <strong>Hello World!</strong>
+    <main>
+    <p id="site">Current website</p>
+    <!-- Exclusive sections keep both groups reachable on the folded display. -->
+    <details name="width-settings" open>
+    <summary>This website</summary>
+    <!-- popup.js reads this native picker and applies the website's selected mode. -->
+    <select id="mode" aria-label="This website width" aria-describedby="status help" disabled>
+        <option value="inherit">Use default</option>
+        <option value="off">Off</option>
+        <option value="slight">Slightly wider</option>
+        <option value="full">Full screen</option>
+    </select>
+
+    <!-- Show only when the selected width needs permission for the current website. -->
+    <button id="allow" type="button" hidden>Allow website access</button>
+
+    <!-- Announce the actual result, including access or storage failures. -->
+    <p id="status" role="status" aria-live="polite">Checking website…</p>
+    <p id="help">Your choice is saved for this website.</p>
+
+    </details>
+    <!-- Global access is optional and requested only by the explicit button. -->
+    <details name="width-settings">
+    <summary>Default for all websites</summary>
+    <select id="default-mode" aria-label="Default width" aria-describedby="default-status" disabled>
+        <option value="off">Off</option>
+        <option value="slight">Slightly wider</option>
+        <option value="full">Full screen</option>
+    </select>
+    <button id="allow-all" type="button" hidden>Allow all websites</button>
+    <p id="default-status" role="status" aria-live="polite">Checking default…</p>
+    </details>
+    </main>
 </body>
 </html>

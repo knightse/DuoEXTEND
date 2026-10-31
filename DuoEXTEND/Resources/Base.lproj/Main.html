@@ -1,15 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="stylesheet" href="../Style.css">
+    <title>DuoEXTEND</title>
 </head>
 <body>
-    <img src="../Icon.png" width="128" height="128" alt="DuoEXTEND Icon">
-    <p>You can turn on DuoEXTEND’s Safari extension in Settings.</p>
+    <!-- The containing app provides setup help; website controls live in Safari's popup. -->
+    <main>
+        <div class="mark" aria-hidden="true">↗</div>
+        <h1>DuoEXTEND</h1>
+        <p class="intro">More room for the web.</p>
+
+        <section aria-labelledby="setup">
+            <h2 id="setup">Set up in Safari</h2>
+            <ol>
+                <li>
+                    <strong>Enable the extension</strong>
+                    <span>In Settings, open Apps → Safari → Extensions → DuoEXTEND.</span>
+                </li>
+                <li>
+                    <strong>Allow access to a website</strong>
+                    <span>Open a page in Safari and choose DuoEXTEND in the page menu.</span>
+                </li>
+                <li>
+                    <strong>Choose your page width</strong>
+                    <span>Select Off, Slightly wider, or Full screen in DuoEXTEND’s Safari panel. Your choice is saved for each website.</span>
+                </li>
+            </ol>
+        </section>
+
+        <p class="privacy">Settings stay on your device.</p>
+        <p class="note">Results vary by website. Fixed controls may keep their original width.</p>
+    </main>
 </body>
 </html>

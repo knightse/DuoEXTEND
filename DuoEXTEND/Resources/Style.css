@@ -1,29 +1,93 @@
-* {
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-    cursor: default;
-}
-
+/* Use system typography and the current light/dark appearance. */
 :root {
     color-scheme: light dark;
-
-    --spacing: 20px;
+    font: -apple-system-body;
 }
 
-html {
-    height: 100%;
+* {
+    box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    margin: 0;
+    color: CanvasText;
+    background: Canvas;
+}
 
-    gap: var(--spacing);
-    margin: 0 calc(var(--spacing) * 2);
-    height: 100%;
-
-    font: -apple-system-short-body;
+/* Leave room for device safe areas; the WKWebView can scroll shorter screens. */
+main {
+    max-width: 520px;
+    margin: auto;
+    padding: max(32px,env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left));
     text-align: center;
+}
+
+/* Simple local artwork; no remote images or fonts. */
+.mark {
+    display: grid;
+    place-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 18px;
+    border-radius: 22px;
+    background: linear-gradient(145deg,#22bbff,#3567ee);
+    color: white;
+    font: bold 52px system-ui;
+}
+
+h1 {
+    font: -apple-system-large-title;
+    font-weight: 700;
+    margin: 0;
+}
+
+.intro {
+    opacity: .65;
+    margin: 8px 0 28px;
+}
+
+/* Group the three setup steps into one readable card. */
+section {
+    padding: 22px;
+    border: 1px solid #8883;
+    border-radius: 22px;
+    text-align: left;
+}
+
+h2 {
+    margin: 0 0 20px;
+    font: -apple-system-headline;
+}
+
+ol {
+    padding-left: 22px;
+    margin: 0;
+}
+
+li {
+    padding-left: 8px;
+    margin: 0 0 20px;
+    line-height: 1.4;
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+li span {
+    display: block;
+    margin-top: 6px;
+    opacity: .7;
+}
+
+/* Secondary information stays readable below the setup steps. */
+.privacy {
+    margin-top: 24px;
+    opacity: .7;
+}
+
+.note {
+    font: -apple-system-footnote;
+    opacity: .65;
+    line-height: 1.45;
 }

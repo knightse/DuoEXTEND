@@ -1,10 +1,10 @@
 {
-    "extension_name": {
-        "message": "DuoEXTEND Extension",
-        "description": "The display name for the extension."
-    },
-    "extension_description": {
-        "message": "This is DuoEXTEND Extension. You should tell us what your extension does here.",
-        "description": "Description of what the extension does."
-    }
+  "extension_name": {
+    "message": "DuoEXTEND",
+    "description": "The display name for the extension."
+  },
+  "extension_description": {
+    "message": "Choose Off, Slightly wider, or Full screen for each website in Safari.",
+    "description": "Description of what the extension does."
+  }
 }
